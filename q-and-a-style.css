@@ -1,0 +1,224 @@
+/* General styles for the entire page */
+body {
+    font-family: Bai Jamjuree, sans-serif;
+    background-color: #282626; /* Background color */
+    color: #fff; /* Text color */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Ensure the header stays at the top */
+}
+
+/* Header Styles */
+header {
+    background-color: #282626;
+    color: white;
+    padding: 0px 0; /* การจัดระยะห่างของ header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 98px; /* Logo width */
+    height: 98px; /* Logo height */
+    margin-left: 56px; /* Space from the left */
+}
+
+header h1 a {
+    display: block; /* Make the logo a clickable block */
+}
+
+nav {
+    margin-right: 32px; /* Space from the right */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+nav ul li {
+    position: relative; /* For dropdown */
+    margin-left: 36px; /* Space between menu items */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* No space before the first item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #BD8E57; /* Brown color on hover */
+}
+
+/* Dropdown Style for About Studio */
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF; /* Background color white */
+    border: 2px solid #BD8E57; /* Brown border color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners */
+    left: 0; /* Align to the left of the dropdown item */
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a {
+    color: #BD8E57; /* Brown text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid #BD8E57; /* Brown border for each item */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+    text-align: left; /* Text alignment to the left */
+    width: calc(100% - 32px); /* Adjust width to account for padding */
+}
+
+nav ul li.dropdown .dropdown-content a:last-child {
+    border-bottom: none; /* Remove bottom border from the last item */
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #BD8E57; /* Brown background on hover */
+    color: #FFFFFF; /* White text color on hover */
+    font-size: 24px; /* Increased font size on hover */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Dropdown Style for Language Dropdown (EN) */
+nav ul li.language-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100px; /* Dropdown width for language menu */
+    box-shadow: none; /* No shadow */
+    z-index: 1;
+    left: 0; /* Align to the left of the dropdown item */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+}
+
+nav ul li.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.language-dropdown .dropdown-content a {
+    padding: 12px 16px;
+    color: white; /* White text color */
+    font-size: 18px; /* Font size */
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, font-size 0.3s;
+    text-align: left; /* Text alignment to the left */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+}
+
+nav ul li.language-dropdown .dropdown-content a:hover {
+    color: #BD8E57; /* Brown text color on hover */
+    font-size: 24px; /* Increased font size on hover */
+    text-align: left; /* Align text to the left */
+    background-color: transparent; /* No background color on hover */
+    border: none; /* No border on hover */
+}
+
+nav ul li.booking-button {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    position: relative; /* For hover effect */
+}
+
+nav ul li.booking-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px; /* Initial width */
+    height: 26px; /* Initial height */
+    border: 2px solid #fff; /* White border */
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* White text color */
+    text-align: center;
+    line-height: 26px; /* Center text vertically */
+    background-color: transparent; /* Transparent background */
+    transition: width 0.3s, height 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li.booking-button a:hover {
+    width: 106px; /* Expanded width */
+    height: 34px; /* Expanded height */
+    background-color: #FFFFFF; /* White background */
+    color: #BD8E57; /* Brown text color */
+    border-color: #BD8E57; /* Brown border color */
+}
+
+
+/* Styles for the Q&A form */
+.qanda-form {
+    background-color: #282626;
+    color: #FFFFFF;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 60px;
+    margin:auto;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    margin-top: 40px; /* เพิ่ม margin-top เพื่อเลื่อนฟอร์มทั้งหมดลงมา */
+}
+
+
+.qanda-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.qanda-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.qanda-form input[type="text"],
+.qanda-form input[type="email"],
+.qanda-form textarea {
+    width: 576px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Center the submit button */
+.qanda-form input[type="submit"] {
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background color and size */
+}
+
+.qanda-form input[type="submit"]:hover {
+    background-color: #BD8E57; /* Brown background on hover */
+    transform: scale(1.1); /* Increase size by 10% on hover */
+}

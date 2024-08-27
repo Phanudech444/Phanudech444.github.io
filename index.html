@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เช่าสตูดิโอ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/booking-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.css' rel='stylesheet' />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <style>
+        header {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: transparent;
+        }
+
+        .video-background {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+        }
+        .video-background video {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        nav ul {
+            position: relative;
+            z-index: 2;
+        }
+        .navigation-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 1;
+        }
+        .navigation-dot {
+            width: 15px;
+            height: 15px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        .navigation-dot.active {
+            opacity: 1;
+        }
+        .navigation-dot:hover {
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        .studio-name {
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none; /* ไม่มีขีดเส้นใต้ */
+            color: #BD8E57; /* สีข้อความพื้นฐาน */
+        }
+/* Popup style */
+.popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Background to darken the page */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup img {
+            max-width: 90%;
+            max-height: 80%;
+        }
+        .popup.active {
+            display: flex;
+        }
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="pic/CANVAS STUDIO white.png" alt="Studio Rental" class="logo">
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About Studio <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="studio1.html">Studio 1</a>
+                        <a href="studio2.html">Studio 2</a>
+                        <a href="studio3.html">Studio 3</a>
+                        <a href="#">Equipment</a>
+                        <a href="gallery.html">Gallery</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="q-and-a.html">Q & A</a>
+                        <a href="map.html">Map</a>
+                        <a href="about us.html">About Us</a>
+                    </div>
+                </li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li class="booking-button"><a href="#">Booking</a></li>
+                <li class="language-dropdown dropdown">
+                    <a href="#" class="dropbtn">EN <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index-th.html">TH</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="video-background">
+        <video id="videoBackground" autoplay muted>
+            <source src="videos/Home 1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-text">
+            <a href="studio1.html" id="studio-name" class="studio-name">Studio 1</a>
+            <div id="studio-details" class="studio-details">
+                - Size 9.50 x 10.00 m., height 6 m. - Curved white screen
+            </div>
+            <div id="studio-description" class="studio-description">- Still photography and studio</div>
+        </div>
+        
+        <div class="navigation-dots">
+            <div class="navigation-dot" data-index="0"></div>
+            <div class="navigation-dot" data-index="1"></div>
+            <div class="navigation-dot" data-index="2"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="image-gallery">
+            <div class="image-wrapper">
+                <img src="pic/Bar.jpg" alt="Image 1">
+            </div>
+            <div class="image-wrapper">
+                <img src="pic/meeting room.jpg" alt="Image 2">
+            </div>
+            <div class="image-wrapper">
+                <img src="pic/glasd house.jpg" alt="Image 3">
+            </div>
+        </div>
+    </div>
+    <!-- Popup Container -->
+    <div id="popup" class="popup">
+        <span id="popup-close" class="popup-close">&times;</span>
+        <img id="popup-image" src="" alt="Popup Image">
+    </div>
+        </div>
+        <div class="text-content">
+            <div class="text-line facility">Facility</div>
+            <div class="text-line studio">in our studio</div>
+            <div class="text-line services">We have a variety of services</div>
+            <div class="text-line services">around the studio to choose from.</div>
+        </div>
+    </div>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" aria-label="Close">&times;</span>
+            <h2>Booking Information</h2>
+            <div class="modal-info">
+                <div class="time-slot morning">
+                    <h3>Morning</h3>
+                    <p>9.00 - 13.00</p>
+                    <p>5,000 ฿</p>
+                </div>
+                <div class="time-slot afternoon">
+                    <h3>Afternoon</h3>
+                    <p>13.00 - 18.00</p>
+                    <p>6,500 ฿</p>
+                </div>
+            </div>
+            <form>
+                <div class="form-group" data-label="Booking Date:">
+                    <input type="date" id="booking-date" name="booking-date" required>
+                </div>
+                <div class="form-group" data-label="Booking Time:">
+                    <input type="text" id="booking-time" name="booking-time" required readonly>
+                </div>
+                <div class="form-group" data-label="Contact Number:">
+                    <input type="tel" id="contact-number" name="contact-number" required pattern="[0-9]{10}">
+                </div>
+                <button type="submit">Confirm Booking</button>
+            </form>            
+        </div>
+    </div>
+
+    <div id="fullyBookedModal" class="modal">
+        <div class="modal-content">
+            <span class="close" aria-label="Close">&times;</span>
+            <h2>Fully Booked</h2>
+            <p>Sorry, this date is fully booked. Please choose another date.</p>
+        </div>
+    </div>
+
+    <div id='calendar'></div>
+    <script>
+        document.querySelectorAll('.image-gallery img').forEach(img => {
+            img.addEventListener('click', function() {
+                const popup = document.getElementById('popup');
+                const popupImage = document.getElementById('popup-image');
+                const popupClose = document.getElementById('popup-close');
+
+                popupImage.src = this.dataset.src;
+                popup.classList.add('active');
+
+                popupClose.addEventListener('click', function() {
+                    popup.classList.remove('active');
+                });
+
+                document.addEventListener('click', function(event) {
+                    if (event.target === popup) {
+                        popup.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.js"></script>
+    <script src="booking-modal.js"></script>
+    <script src="script.js"></script>
+    <script src="video-run.js"></script>
+</body>
+</html>

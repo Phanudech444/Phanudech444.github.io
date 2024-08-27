@@ -1,0 +1,473 @@
+/* สไตล์ทั่วไป */
+body {
+    font-family: Bai Jamjuree, sans-serif;
+    
+    margin: 0;
+    padding: 0;
+    background-color: #282626; /* สีพื้นหลัง #282626 */
+    color: #fff; /* สีข้อความขาว */
+    max-width: 1600px;
+    margin: 0 auto; /* จัดให้อยู่กลางแนวนอน */
+}
+
+header {
+    background: transparent; /* Make background transparent */
+    color: white;
+    padding: 0px 0; /* การจัดระยะห่างของ header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header .logo {
+    width: 98px; /* ความกว้างของโลโก้ */
+    height: 98px; /* ความสูงของโลโก้ */
+    margin-left: 56px; /* ระยะห่างจากด้านซ้าย */
+}
+
+header h1 a {
+    display: block; /* ทำให้โลโก้เป็นบล็อกที่คลิกได้ */
+}
+
+nav {
+    margin-right: 32px; /* ระยะห่างจากด้านขวา */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* จัดให้วางตัวแนวตั้ง */
+}
+
+nav ul li {
+    position: relative; /* สำหรับ dropdown */
+    margin-left: 36px; /* ระยะห่างระหว่างเมนู */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* ไม่มีระยะห่างก่อนรายการแรก */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    transition: color 0.3s; /* การเปลี่ยนสีที่ราบรื่น */
+}
+
+nav ul li a:hover {
+    color: #BD8E57; /* สีสีน้ำตาลเมื่อวางเมาส์ */
+}
+
+/* สไตล์ Dropdown สำหรับ About Studio */
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF; /* สีพื้นหลังขาว */
+    border: 2px solid #BD8E57; /* สีขอบน้ำตาล */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure dropdown is on top */
+    border-radius: 5px; /* มุมโค้ง */
+    left: 0; /* จัดตำแหน่งไปทางซ้ายของรายการ dropdown */
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a {
+    color: #BD8E57; /* สีข้อความน้ำตาล */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid #BD8E57; /* ขอบน้ำตาลสำหรับแต่ละรายการ */
+    font-size: 18px; /* ขนาดฟอนต์ */
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+    text-align: left; /* จัดข้อความไปทางซ้าย */
+    width: calc(100% - 32px); /* ปรับความกว้างให้พอดีกับการเติมช่อง */
+}
+
+nav ul li.dropdown .dropdown-content a:last-child {
+    border-bottom: none; /* ลบขอบล่างจากรายการสุดท้าย */
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #BD8E57; /* พื้นหลังสีน้ำตาลเมื่อวางเมาส์ */
+    color: #FFFFFF; /* สีข้อความขาวเมื่อวางเมาส์ */
+    font-size: 24px; /* ขนาดฟอนต์เพิ่มขึ้นเมื่อวางเมาส์ */
+    text-align: center; /* จัดข้อความไปกลาง */
+}
+
+/* สไตล์ Dropdown สำหรับ Language Dropdown (EN) */
+nav ul li.language-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100px; /* ความกว้างของ dropdown สำหรับเมนูภาษา */
+    box-shadow: none; /* ไม่มีเงา */
+    z-index: 1;
+    left: 0; /* จัดตำแหน่งไปทางซ้ายของรายการ dropdown */
+    background-color: transparent; /* ไม่มีสีพื้นหลัง */
+    border: none; /* ไม่มีขอบ */
+}
+
+nav ul li.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.language-dropdown .dropdown-content a {
+    padding: 12px 16px;
+    color: white; /* สีข้อความขาว */
+    font-size: 18px; /* ขนาดฟอนต์ */
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, font-size 0.3s;
+    text-align: left; /* จัดข้อความไปทางซ้าย */
+    background-color: transparent; /* ไม่มีสีพื้นหลัง */
+    border: none; /* ไม่มีขอบ */
+}
+
+nav ul li.language-dropdown .dropdown-content a:hover {
+    color: #BD8E57; /* สีข้อความน้ำตาลเมื่อวางเมาส์ */
+    font-size: 24px; /* ขนาดฟอนต์เพิ่มขึ้นเมื่อวางเมาส์ */
+    text-align: left; /* จัดข้อความไปทางซ้าย */
+    background-color: transparent; /* ไม่มีสีพื้นหลังเมื่อวางเมาส์ */
+    border: none; /* ไม่มีขอบเมื่อวางเมาส์ */
+}
+
+nav ul li.booking-button {
+    display: flex; /* ใช้ flexbox สำหรับการจัดตำแหน่ง */
+    align-items: center;
+    position: relative; /* สำหรับเอฟเฟ็กต์เมื่อวางเมาส์ */
+}
+
+nav ul li.booking-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px; /* ความกว้างเริ่มต้น */
+    height: 26px; /* ความสูงเริ่มต้น */
+    border: 2px solid #fff; /* ขอบขาว */
+    border-radius: 5px; /* มุมโค้ง */
+    color: #fff; /* สีข้อความขาว */
+    text-align: center;
+    line-height: 26px; /* จัดข้อความให้กลางแนวตั้ง */
+    background-color: transparent; /* ไม่มีสีพื้นหลัง */
+    transition: width 0.3s, height 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s; /* การเปลี่ยนแปลงที่ราบรื่น */
+}
+
+nav ul li.booking-button a:hover {
+    width: 106px; /* ความกว้างขยาย */
+    height: 34px; /* ความสูงขยาย */
+    background-color: #FFFFFF; /* สีพื้นหลังขาว */
+    color: #BD8E57; /* สีข้อความน้ำตาล */
+    border-color: #BD8E57; /* สีขอบน้ำตาล */
+}
+
+/* สไตล์เนื้อหาหลัก */
+.main-content {
+    display: flex;
+    align-items: center; /* จัดให้วางตัวแนวตั้ง */
+    margin-top: 48px; /* ระยะห่างจากการนำทาง */
+    padding: 0 56px; /* ระยะห่างจากขอบซ้ายและขวา */
+    background-color: #282626; /* สีพื้นหลังของเนื้อหาหลัก */
+    box-sizing: border-box; /* รวมขอบในขนาด */
+    flex-direction: row-reverse; /* สลับลำดับการแสดงผล */
+}
+
+
+/* วิดีโอ */
+.main-content .video2 {
+    width: 600px; /* ขนาดของวิดีโอ */
+    height: 400px; /* ขนาดของวิดีโอ */
+    margin-right: 400px; /* เพิ่มระยะห่างจากขอบขวา */
+    margin-left: 200px; /* ลบระยะห่างจากขอบซ้าย */
+    box-sizing: border-box; /* รวมขอบในขนาด */
+}
+
+
+/* Modal (พื้นหลัง) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+/* เนื้อหา Modal */
+.modal-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 4px solid #BD8E57; /* สีขอบ */
+    width: 496px; /* ความกว้างของ modal */
+    height: 472px; /* ความสูงของ modal */
+    border-radius: 15px; /* มุมโค้ง */
+    text-align: center;
+    box-sizing: border-box; /* รวมขอบในขนาด */
+}
+
+/* ข้อมูล Modal */
+.modal-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto; /* จัดให้อยู่กลางแนวนอน */
+    padding: 10px; /* การเติมช่องภายใน */
+    position: relative; /* ตำแหน่งสัมพัทธ์เพื่อการเคลื่อนที่ */
+    top: -40px; /* เคลื่อนที่คอนเทนเนอร์ขึ้น */
+}
+
+.time-slot {
+    width: 45%; /* ความกว้างของแต่ละช่วงเวลา */
+    border: 2px solid #BD8E57; /* ความหนาของขอบเพิ่มขึ้น */
+    border-radius: 10px; /* มุมโค้งสำหรับช่วงเวลา */
+    padding: 20px; /* การเติมช่องภายในแต่ละช่วงเวลา */
+    box-sizing: border-box; /* รวมขอบในขนาด */
+}
+
+.time-slot h3 {
+    margin: 0 0 10px; /* ระยะห่างด้านล่างของหัวเรื่อง */
+    color: #BD8E57; /* สีหัวเรื่อง */
+    font-size: 18px; /* ขนาดฟอนต์ของหัวเรื่อง */
+}
+
+.time-slot p {
+    margin: 0; /* ลบระยะห่างจากพารากราฟ */
+    color: #BD8E57; /* สีข้อความ */
+    font-size: 16px; /* ขนาดฟอนต์ของข้อความ */
+}
+/* สไตล์ทั่วไปของช่องเวลาที่สามารถคลิกได้ */
+.time-slot {
+    width: 45%; /* ความกว้างของแต่ละช่วงเวลา */
+    border: 2px solid #BD8E57; /* ความหนาของขอบ */
+    border-radius: 10px; /* มุมโค้ง */
+    padding: 20px; /* การเติมช่องภายในแต่ละช่วงเวลา */
+    box-sizing: border-box; /* รวมขอบในขนาด */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นรูปมือเมื่อวางเมาส์ */
+    transition: background-color 0.3s, color 0.3s; /* การเปลี่ยนแปลงที่ราบรื่น */
+}
+
+/* สไตล์ช่องที่ถูกเลือก */
+.time-slot.selected {
+    background-color: #BD8E57; /* สีพื้นหลังเมื่อเลือก */
+    color: #FFFFFF; /* สีข้อความเมื่อเลือก */
+}
+
+/* เปลี่ยนสีของข้อความในช่อง booking-time เมื่อเลือก */
+input#booking-time {
+    color: #BD8E57; /* สีข้อความ */
+}
+
+
+/* ปรับขนาดของข้อความเมื่อเลือก */
+.time-slot.selected h3,
+.time-slot.selected p {
+    color: #FFFFFF; /* สีข้อความเมื่อเลือก */
+}
+
+/* กำหนดสีพื้นหลังและข้อความให้กับช่องที่ไม่ได้เลือก */
+.time-slot:not(.selected) {
+    background-color: transparent; /* สีพื้นหลังโปร่งใส */
+    color: #BD8E57; /* สีข้อความปกติ */
+}
+
+/* สไตล์ของปุ่ม Confirm Booking */
+.confirm-button {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #BD8E57;
+    color: #FFFFFF;
+    border: 2px solid #BD8E57;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบน */
+}
+
+.confirm-button:hover {
+    background-color: #FFFFFF;
+    color: #BD8E57;
+    border-color: #BD8E57;
+}
+
+
+/* ปุ่มปิด */
+.close {
+    color: #BD8E57;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: transform 0.3s ease; /* การเปลี่ยนแปลงที่ราบรื่น */
+}
+
+.close:hover,
+.close:focus {
+    color: #BD8E57;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.2); /* ขยายขนาดของปุ่ม */
+}
+.video-text {
+    position: absolute;
+    bottom: 20px; /* ระยะห่างจากด้านล่าง */
+    left: 5%; /* ขยับข้อความไปทางซ้ายจากกลาง */
+    transform: translateX(-0%); /* ปรับให้ข้อความไม่ถูกเลื่อน */
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 150px;
+    border-radius: 5px; /* มุมโค้งสำหรับกล่องข้อความ */
+    
+}
+.video-text .studio-name {
+    font-size: 36px; /* ขนาดฟอนต์สำหรับ Studio 1 */
+    font-weight: bold; /* เพิ่มความหนาของฟอนต์ */
+}
+
+.video-text .studio-details,
+.video-text .studio-description {
+    font-size: 18px; /* ขนาดฟอนต์สำหรับรายละเอียดและคำอธิบาย */
+}
+.image-gallery {
+    display: flex;
+    gap: 10px; /* ระยะห่างระหว่างรูป */
+    justify-content: flex-start; /* จัดรูปภาพให้อยู่ที่ด้านซ้าย */
+    padding: 10px 20px; /* เพิ่ม padding ให้กับรูปภาพ */
+    margin-top: 16px; /* เพิ่มระยะห่างด้านบนของการจัดวางรูปภาพ */
+    margin-left: 200px; /* เพิ่มระยะห่างด้านซ้ายเพื่อขยับรูปภาพไปทางขวา */
+}
+
+.image-gallery a {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden; /* ซ่อนส่วนที่เกินของรูปภาพที่ขยาย */
+}
+
+.image-gallery img {
+    width: 192px; /* กว้าง 192px */
+    height: 300px; /* สูง 300px */
+    object-fit: cover; /* ทำให้รูปภาพไม่ผิดเพี้ยน */
+    transition: transform 0.3s ease-in-out; /* การเปลี่ยนแปลงซูมที่ลื่นไหล */
+}
+
+.image-gallery a:hover img {
+    transform: scale(1.1); /* ซูมภาพเมื่อเมาส์ไปโดน */
+}
+/* กล่องข้อความข้างรูปภาพ */
+.text-content {
+    display: flex;
+    flex-direction: column; /* ข้อความในแนวตั้ง */
+    justify-content: center; /* จัดกลางแนวตั้ง */
+    align-items: flex-start; /* จัดแนวซ้าย */
+    position: absolute; /* ตำแหน่งสัมพัทธ์ */
+    top: 530px; /* ขยับลงมาจากวิดีโอ */
+    left: 950px; /* อยู่ข้างขวาของรูปภาพ */
+    margin-left: 20px; /* ระยะห่างจากรูปภาพ */
+    font-size: 18px; /* ขนาดฟอนต์ทั่วไป */
+}
+
+.text-line {
+    margin-bottom: 0px; /* ระยะห่างระหว่างบรรทัดทั่วไป */
+}
+
+.text-line.facility {
+    font-size: 24px; /* ขนาดฟอนต์สำหรับ Facility */
+}
+
+.text-line.studio {
+    font-size: 24px; /* ขนาดฟอนต์สำหรับ in our studio */
+    margin-bottom: 2px; /* ลดระยะห่างระหว่าง Facility และ in our studio */
+}
+
+.text-line.services {
+    font-size: 18px; /* ขนาดฟอนต์สำหรับข้อความอื่นๆ */
+    margin-bottom: 2px; /* ระยะห่างระหว่างบรรทัด */
+}
+.studio-name {
+    color: #BD8E57;
+}
+
+.text-line.facility {
+    color: #BD8E57;
+}
+.text-line.studio {
+    color: #BD8E57;
+}
+.video-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #ffffff;
+    transition: left 0.5s ease; /* เพิ่มการเปลี่ยนแปลงตำแหน่งด้วยการเคลื่อนไหว */
+}
+
+.video-text.right {
+    left: auto;
+    right: 20px; /* ขยับไปที่ด้านขวา */
+}
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out; /* เพิ่ม transition เพื่อให้การซูมลื่นไหล */
+
+}
+
+.video-background video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(-50%);
+    transition: transform 0.5s ease-in-out; /* เพิ่ม transition สำหรับวิดีโอ */
+}
+
+.video-background:hover video {
+    transform: translateX(-50%) scale(1.1); /* ซูมวิดีโอเมื่อเมาส์เคลื่อนไปเหนือ */
+}
+.video-text.fade-out {
+    opacity: 0; /* ปรับให้จางเมื่อเปลี่ยนวิดีโอ */
+}
+/* กำหนดการตั้งค่าของ gallery */
+.image-gallery {
+    display: flex; /* จัดเรียงภาพในแนวนอน */
+}
+
+/* กำหนดขนาดคงที่ของ wrapper และซ่อนส่วนที่เกินออกไป */
+.image-wrapper {
+    width: 192px; /* กำหนดความกว้างคงที่ */
+    height: 300px; /* กำหนดความสูงคงที่ */
+    overflow: hidden; /* ซ่อนส่วนที่เกินออกไป */
+    position: relative; /* จัดตำแหน่งให้ซ้อนทับได้ */
+}
+
+/* การตั้งค่าของแต่ละภาพ */
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ครอบคลุมพื้นที่ทั้งหมดของ container */
+    transition: transform 0.5s ease-in-out; /* เพิ่มความนุ่มนวลในการซูม */
+    transform-origin: center; /* ตั้งจุดเริ่มต้นการซูมที่กลางภาพ */
+}
+
+/* ซูมภาพเมื่อเมาส์วางไปที่ภาพ */
+.image-wrapper:hover img {
+    transform: scale(1.2); /* ซูมภาพขึ้น 20% */
+}
+
+

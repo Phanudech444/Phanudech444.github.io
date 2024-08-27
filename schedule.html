@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - Charcoal Design</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/schedule-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/booking-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap">
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="pic/CANVAS STUDIO white.png" alt="Studio Rental" class="logo">
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About Studio <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="studio1.html">Studio 1</a>
+                        <a href="studio2.html">Studio 2</a>
+                        <a href="studio3.html">Studio 3</a>
+                        <a href="#">Equipment</a>
+                        <a href="gallery.html">Gallery</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="q-and-a.html">Q & A</a>
+                        <a href="map.html">Map</a>
+                        <a href="about us.html">About Us</a>
+                    </div>
+                </li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li class="booking-button"><a href="#">Booking</a></li>
+                <li class="language-dropdown dropdown">
+                    <a href="#" class="dropbtn">EN <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index-th.html">TH</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="calendar-container">
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <button id="prev-month">&#8249;</button>
+                    <h2 id="calendar-title"></h2>
+                    <button id="next-month">&#8250;</button>
+                </div>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                        <!-- JavaScript will populate this -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-container">
+                <h2>How to Booking</h2>
+                <ul>
+                    <li>Click on the date on the booking schedule.</li>
+                    <li>Then select the desired time period. which has the following details:</li>
+                    <li class="highlight"><h2>Morning</h2><li>Time 09.00-13.00 price 5,000 baht</li>
+                    <li class="highlight"><h2>Afternoon</h2><li>Time 13.00-18.00 price 6,500 baht</li>
+                    <li>Then fill in the details and press the button.</li>
+                    <li>"Confirm" to confirm your booking information. Wait no more than 1 hour to contact you, or </li>
+                    <li class="highlight">" if you would like to confirm your reservation quickly, please contact the channels below:</li>
+                </ul>
+                <div class="contact-info">
+                    <div class="phone-info">
+                        <i class="fas fa-phone"></i> 02-053-3669
+                    </div>
+                    <div class="line-info">
+                        <i class="fab fa-line"></i> @Canvas
+                    </div>    
+                                    
+                </div>
+                
+            
+    </main>
+<!-- The Modal -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" aria-label="Close">&times;</span>
+        <h2>Booking Information</h2>
+        <div class="modal-info">
+            <div class="time-slot morning">
+                <h3>Morning</h3>
+                <p>9.00 - 13.00</p>
+                <p>5,000 ฿</p>
+            </div>
+            <div class="time-slot afternoon">
+                <h3>Afternoon</h3>
+                <p>13.00 - 18.00</p>
+                <p>6,500 ฿</p>
+            </div>
+        </div>
+        <form>
+            <div class="form-group" data-label="Booking Date:">
+                <input type="date" id="booking-date" name="booking-date" required>
+            </div>
+            
+            <div class="form-group" data-label="Booking Time:">
+                <input type="text" id="booking-time" name="booking-time" required readonly>
+            </div>
+        
+            <div class="form-group" data-label="Contact Number:">
+                <input type="tel" id="contact-number" name="contact-number" required pattern="[0-9]{10}">
+            </div>
+        
+            <button type="submit">Confirm Booking</button>
+        </form>            
+    </div>
+</div>
+
+<script src="booking-modal.js"></script>
+
+
+    <!-- กล่องข้อความแจ้งเตือน -->
+    <div id="overlay" class="overlay"></div>
+    <div id="alert-box" class="alert">
+        <span class="close-btn" onclick="closeAlert()">&times;</span>
+        Fully booked !!
+        <!-- กล่องข้อความแจ้งเตือน -->
+<div id="alert-box" class="alert">
+    <span class="close-btn" onclick="closeAlert()">&times;</span>
+    <p>Sorry, this date is unavailable.</p>
+</div>
+
+<!-- Popup for time selection -->
+<div id="time-selection-box" class="time-selection-box">
+    <span class="close-btn" onclick="closeTimeSelection()">&times;</span>
+    <div class="time-selection-content">
+        <h2>Select Time Slot</h2>
+        <div class="time-slot">
+            <h3>Morning</h3>
+            <p>09:00 - 13:00</p>
+            <p>Price: 5,000 baht</p>
+            <button onclick="confirmBooking('Morning')">Select</button>
+        </div>
+        <div class="time-slot">
+            <h3>Afternoon</h3>
+            <p>13:00 - 18:00</p>
+            <p>Price: 6,500 baht</p>
+            <button onclick="confirmBooking('Afternoon')">Select</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="closeAlert()"></div>
+
+    </div>
+
+    <script>
+        const calendarTitle = document.getElementById('calendar-title');
+        const calendarBody = document.getElementById('calendar-body');
+        const prevMonthButton = document.getElementById('prev-month');
+        const nextMonthButton = document.getElementById('next-month');
+        const alertBox = document.getElementById('alert-box');
+        const overlay = document.getElementById('overlay');
+
+        let currentDate = new Date();
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+
+            const startDay = firstDay.getDay();
+            const endDay = lastDay.getDay();
+
+            calendarTitle.textContent = `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+
+            let calendarHtml = '';
+            calendarHtml += '<tr>';
+
+            // Fill in the empty days before the first day of the month
+            for (let i = 0; i < startDay; i++) {
+                calendarHtml += '<td></td>';
+            }
+
+            // Fill in the days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const currentDay = new Date(year, month, day);
+                const availability = getDayAvailability(currentDay); // Get availability status
+
+                calendarHtml += `<td class="${availability.class}" style="color: ${availability.color}; cursor: ${availability.cursor};" onclick="showAlert('${availability.alert}')">${day}</td>`;
+
+                // Move to the next row on Saturday
+                if ((startDay + day) % 7 === 0) {
+                    calendarHtml += '</tr><tr>';
+                }
+            }
+
+            // Fill in the empty days after the last day of the month
+            for (let i = endDay + 1; i <= 6; i++) {
+                calendarHtml += '<td></td>';
+            }
+
+            calendarHtml += '</tr>';
+
+            calendarBody.innerHTML = calendarHtml;
+        }
+
+        function getDayAvailability(date) {
+            const day = date.getDate();
+            let color = '#000'; // Default color
+            let cursor = 'default'; // Default cursor
+            let alert = '';
+            let className = '';
+
+            if (day % 2 === 0) {
+                color = '#BD8E57'; // Available all day
+                className = 'available';
+            } else if (day % 3 === 0) {
+                color = '#FF9500'; // Available half day
+                className = 'half-day';
+            } else {
+                color = '#FF0000'; // Not available
+                cursor = 'pointer'; // Change cursor to pointer
+                alert = 'Fully booked !!'; // Alert message
+                className = 'unavailable';
+            }
+
+            return { color, cursor, alert, class: className };
+        }
+
+        function showAlert(message) {
+            if (message) {
+                alertBox.querySelector('span').nextSibling.textContent = message;
+                alertBox.style.display = 'block';
+                overlay.style.display = 'block';
+            }
+        }
+
+        function closeAlert() {
+            alertBox.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        prevMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        nextMonthButton.addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // ปิดกล่องข้อความเมื่อคลิกที่ overlay
+        overlay.addEventListener('click', closeAlert);
+
+        renderCalendar();
+    </script>
+</body>
+</html>
+

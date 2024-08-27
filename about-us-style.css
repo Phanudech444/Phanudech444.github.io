@@ -1,0 +1,349 @@
+/* General styles for the entire page */
+body {
+    font-family: Bai Jamjuree, sans-serif;
+    background-color: #282626; /* Background color */
+    color: #fff; /* Text color */
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    text-align: center; /* Center text horizontally */
+}
+
+header {
+    background-color: #282626;
+    color: white;
+    padding: 0px 0; /* การจัดระยะห่างของ header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; /* Make sure header stays at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+header .logo {
+    width: 98px; /* Logo width */
+    height: 98px; /* Logo height */
+    margin-left: 56px; /* Space from the left */
+}
+
+header h1 a {
+    display: block; /* Make the logo a clickable block */
+}
+
+nav {
+    margin-right: 32px; /* Space from the right */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+nav ul li {
+    position: relative; /* For dropdown */
+    margin-left: 36px; /* Space between menu items */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* No space before the first item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #BD8E57; /* Brown color on hover */
+}
+
+/* Dropdown Style for About Studio */
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF; /* Background color white */
+    border: 2px solid #BD8E57; /* Brown border color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners */
+    left: 0; /* Align to the left of the dropdown item */
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a {
+    color: #BD8E57; /* Brown text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid #BD8E57; /* Brown border for each item */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+    text-align: left; /* Text alignment to the left */
+    width: calc(100% - 32px); /* Adjust width to account for padding */
+}
+
+nav ul li.dropdown .dropdown-content a:last-child {
+    border-bottom: none; /* Remove bottom border from the last item */
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #BD8E57; /* Brown background on hover */
+    color: #FFFFFF; /* White text color on hover */
+    font-size: 24px; /* Increased font size on hover */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Dropdown Style for Language Dropdown (EN) */
+nav ul li.language-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100px; /* Dropdown width for language menu */
+    box-shadow: none; /* No shadow */
+    z-index: 1;
+    left: 0; /* Align to the left of the dropdown item */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+}
+
+nav ul li.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.language-dropdown .dropdown-content a {
+    padding: 12px 16px;
+    color: white; /* White text color */
+    font-size: 18px; /* Font size */
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, font-size 0.3s;
+    text-align: left; /* Text alignment to the left */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+}
+
+nav ul li.language-dropdown .dropdown-content a:hover {
+    color: #BD8E57; /* Brown text color on hover */
+    font-size: 24px; /* Increased font size on hover */
+    text-align: left; /* Align text to the left */
+    background-color: transparent; /* No background color on hover */
+    border: none; /* No border on hover */
+}
+
+nav ul li.booking-button {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    position: relative; /* For hover effect */
+}
+
+nav ul li.booking-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px; /* Initial width */
+    height: 26px; /* Initial height */
+    border: 2px solid #fff; /* White border */
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* White text color */
+    text-align: center;
+    line-height: 26px; /* Center text vertically */
+    background-color: transparent; /* Transparent background */
+    transition: width 0.3s, height 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li.booking-button a:hover {
+    width: 106px; /* Expanded width */
+    height: 34px; /* Expanded height */
+    background-color: #FFFFFF; /* White background */
+    color: #BD8E57; /* Brown text color */
+    border-color: #BD8E57; /* Brown border color */
+}
+
+/* About Us Layout */
+main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 99px;
+    overflow: hidden;
+}
+
+.about-us-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.image-frame {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 8px; /* Gap between the grid items */
+    width: 672px;
+    height: 570px; /* Adjust height if necessary */
+    padding: 8px; /* Padding inside the frame to account for gaps */
+    box-sizing: border-box;
+    margin-top: 28px;
+}
+
+.about-us-info {
+    flex: 1;
+    padding: 15px;
+    color: #fff;
+    max-width: 600px;
+    margin-left: 0;
+    overflow: hidden;
+}
+
+.image-frame .image1,
+.image-frame .image2,
+.image-frame .image3,
+.image-frame .image4,
+.image-frame .image5,
+.image-frame .image6,
+.image-frame .image7,
+.image-frame .image8 {
+    background-color: #ccc; /* Light gray background for images */
+    border-radius: 4px; /* Optional: Adds rounded corners to images */
+}
+
+/* Set specific size for the first image */
+.image-frame {
+    display: grid;
+    grid-template-columns: 200px auto; /* คอลัมน์แรกสำหรับรูป 1, คอลัมน์ที่สองสำหรับรูป 2, 3 และ 4 */
+    grid-template-rows: auto auto; /* แถวที่หนึ่งสำหรับรูป 2, แถวที่สองสำหรับรูป 3 และ 4 */
+    gap: 10px; /* ระยะห่างระหว่างรูป */
+    max-width: 100%; /* จำกัดความกว้างของกรอบ */
+    box-sizing: border-box; /* รวม padding และ border ในขนาดรวม */
+}
+
+/* Adjust the grid layout to position the fourth image */
+.image-frame {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; /* สามคอลัมน์ที่มีขนาดที่กำหนด */
+    grid-template-rows: 272px 130px; /* สองแถว: แถวแรกสำหรับรูปใหญ่, แถวที่สองสำหรับรูปเล็ก */
+    gap: 6px; /* ระยะห่างระหว่างรูป */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.image1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3; /* ครอบคลุมทั้งสองแถว */
+    width: 200px;
+    height: 272px;
+}
+
+.image2 {
+    grid-column: 2 / 4; /* ขยายจากคอลัมน์ที่ 2 ไปจนถึงคอลัมน์ที่ 4 */
+    grid-row: 1 / 2; /* แถวแรก */
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.image3 {
+    grid-column: 2 / 3; /* คอลัมน์ที่ 2 */
+    grid-row: 2 / 3; /* แถวที่สอง */
+    width: 100%;
+    height: 136px;
+    object-fit: cover;
+    margin-top: -145px; /* ปรับค่าตามที่ต้องการ */
+}
+
+.image4 {
+    grid-column: 3 / 4; /* คอลัมน์ที่ 3 */
+    grid-row: 2 / 3; /* แถวที่สอง */
+    width: 100%;
+    height: 136px;
+    object-fit: cover;
+    margin-top: -145px; /* ปรับค่าตามที่ต้องการ */
+}
+
+.image5 {
+    grid-column: 1 / 2; /* First column */
+    grid-row: 3 / 4; /* New row */
+    width: 466px;
+    height: 136px;
+    object-fit: cover;
+    margin-top: -138px; /* ปรับค่าตามที่ต้องการ */
+}
+.image6 {
+    grid-column: 1 / 2; /* คอลัมน์ที่ 1 */
+    grid-row: 4 / 5; /* แถวที่สี่ */
+    width: 226px;
+    height: 132px;
+    object-fit: cover;
+    margin-top: -4px; /* ปรับค่าตามที่ต้องการ */
+}
+
+.image7 {
+    grid-column: 2 / 3; /* คอลัมน์ที่ 2 */
+    grid-row: 4 / 5; /* แถวที่สี่ */
+    width: 233px;
+    height: 130px;
+    object-fit: cover;
+    margin-top: -4px; /* ปรับค่าตามที่ต้องการ */
+    position: relative; /* ใช้ตำแหน่ง relative */
+    left: 25px; /* ขยับไปทางขวา */
+}
+.image8 {
+    grid-column: 3; /* Position in the third column */
+    grid-row: 2; /* Keep in the same row as image 4 and 5 */
+    width: 186px; /* Width of image 8 */
+    height: 276px; /* Height to match the row height */
+    object-fit: cover;
+    margin-top: -4px; /* ปรับค่าตามที่ต้องการ */
+    margin-left: auto; /* Push image 8 to the right edge of the column */
+}
+
+/* Adjust other styles as needed */
+
+
+/* About Us Info */
+.about-us-info {
+    flex: 1;
+    padding: 15px;
+    color: #fff;
+    max-width: 600px;
+    margin-left: 50px; /* Increased margin to create more space between frame and text */
+    overflow: hidden;
+    
+}
+
+.about-us-info h1 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.about-us-info p {
+    font-size: 14px;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+/* Styling specific text in About Us */
+.about-us-info .highlight {
+    color: #BD8E57;
+    font-weight: bold;
+}
+
+.about-us-info .highlight-white {
+    color: #fff;
+}

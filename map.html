@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 1 - แผนที่</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/studio1-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/booking-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;700&display=swap">
+    <style>
+        .contact-info {
+            margin-left: 20px; /* Space between map and contact info */
+            text-align: left;
+            color: #fff;
+        }
+        .contact-info p {
+            margin: 10px 0;
+        }
+        .contact-info i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="index.html">
+                <img src="pic/CANVAS STUDIO white.png" alt="Studio Rental" class="logo">
+            </a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About Studio <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="studio1.html">Studio 1</a>
+                        <a href="studio2.html">Studio 2</a>
+                        <a href="studio3.html">Studio 3</a>
+                        <a href="#">Equipment</a>
+                        <a href="gallery.html">Gallery</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="q-and-a.html">Q & A</a>
+                        <a href="map.html">Map</a>
+                        <a href="about us.html">About Us</a>
+                    </div>
+                </li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li class="booking-button"><a href="#">Booking</a></li>
+                <li class="language-dropdown dropdown">
+                    <a href="#" class="dropbtn">EN <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index-th.html">TH</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="studio-title">แผนที่</h1>
+        <div style="display: flex; align-items: flex-start;">
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed/v1/place?q=6%20Soi%20Sangkhom%20Songkhram%2010,%20Samsen%20Nok,%20Lat%20Phrao,%20Bangkok%2010230&key=YOUR_GOOGLE_MAPS_API_KEY"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"></iframe>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-phone-alt"></i> 02-053-3669</p>
+                <p><i class="fas fa-envelope"></i> info@charcoaldesign.co.th</p>
+                <p><i class="fab fa-instagram"></i> charcoal.design</p>
+                <p><i class="fab fa-instagram"></i> @CANVAS</p>
+            </div>
+        </div>
+    </main>
+    <!-- The Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" aria-label="Close">&times;</span>
+            <h2>Booking Information</h2>
+            <div class="modal-info">
+                <div class="time-slot morning">
+                    <h3>Morning</h3>
+                    <p>9.00 - 13.00</p>
+                    <p>5,000 ฿</p>
+                </div>
+                <div class="time-slot afternoon">
+                    <h3>Afternoon</h3>
+                    <p>13.00 - 18.00</p>
+                    <p>6,500 ฿</p>
+                </div>
+            </div>
+            <form>
+                <div class="form-group" data-label="Booking Date:">
+                    <input type="date" id="booking-date" name="booking-date" required>
+                </div>
+                
+                <div class="form-group" data-label="Booking Time:">
+                    <input type="text" id="booking-time" name="booking-time" required readonly>
+                </div>
+            
+                <div class="form-group" data-label="Contact Number:">
+                    <input type="tel" id="contact-number" name="contact-number" required pattern="[0-9]{10}">
+                </div>
+            
+                <button type="submit">Confirm Booking</button>
+            </form>            
+        </div>
+    </div>
+
+
+    <script src="booking-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+/* Gallery Container */
+.gallery-container {
+    width: 1232px;
+    height: 648px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden; /* ซ่อนการเลื่อน */
+    background-color: #fff; /* สีพื้นหลังเป็นสีขาว */
+    border: 1px solid #ddd; /* กรอบบางๆ รอบๆ Gallery Container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาให้ดูดีขึ้น */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* ชิดขอบบน */
+    align-items: flex-start; /* ชิดขอบซ้าย */
+    padding: 0; /* ลบการ padding ในกรณีที่มี */
+}
+
+/* Gallery Set */
+.gallery-set {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* ระยะห่างระหว่างรูปที่ 1 และ 2 */
+}
+
+/* Gallery Item */
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ขนาดของรูปแต่ละรูป */
+.item-1 img {
+    width: 456px;
+    height: 174px;
+    margin: 0; /* ชิดขอบกรอบ */
+}
+
+.item-2 img {
+    width: 456px;
+    height: 179px;
+    margin: 0; /* ชิดขอบกรอบ */
+}
+
+
+.item-3 img {
+    width: 640px;
+    height: 203px;
+}
+
+.item-4 img {
+    width: 770px;
+    height: 359px;
+}
+
+.item-5 img {
+    width: 586px;
+    height: 203px;
+}
+
+/* ปรับ layout สำหรับหน้าจอที่เล็กลง */
+@media (max-width: 1024px) {
+    .gallery-set {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 100%; /* ปรับขนาดให้เต็มความกว้างของหน้าจอ */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%; /* ปรับขนาดให้เต็มความกว้างของหน้าจอ */
+    }
+}

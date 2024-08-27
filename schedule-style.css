@@ -1,0 +1,437 @@
+/* General styles for the entire page */
+body {
+    font-family: Bai Jamjuree, sans-serif;
+    background-color: #282626; /* Background color */
+    color: #fff; /* Text color */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Ensure the header stays at the top */
+}
+
+/* Header Styles */
+header {
+    background-color: #282626;
+    color: white;
+    padding: 0px 0; /* การจัดระยะห่างของ header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 98px; /* Logo width */
+    height: 98px; /* Logo height */
+    margin-left: 56px; /* Space from the left */
+}
+
+header h1 a {
+    display: block; /* Make the logo a clickable block */
+}
+
+nav {
+    margin-right: 32px; /* Space from the right */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+nav ul li {
+    position: relative; /* For dropdown */
+    margin-left: 36px; /* Space between menu items */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* No space before the first item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+nav ul li a:hover {
+    color: #BD8E57; /* Brown color on hover */
+}
+
+/* Dropdown Style for About Studio */
+nav ul li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF; /* Background color white */
+    border: 2px solid #BD8E57; /* Brown border color */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px; /* Rounded corners */
+    left: 0; /* Align to the left of the dropdown item */
+}
+
+nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.dropdown .dropdown-content a {
+    color: #BD8E57; /* Brown text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid #BD8E57; /* Brown border for each item */
+    font-size: 18px; /* Font size */
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+    text-align: left; /* Text alignment to the left */
+    width: calc(100% - 32px); /* Adjust width to account for padding */
+}
+
+nav ul li.dropdown .dropdown-content a:last-child {
+    border-bottom: none; /* Remove bottom border from the last item */
+}
+
+nav ul li.dropdown .dropdown-content a:hover {
+    background-color: #BD8E57; /* Brown background on hover */
+    color: #FFFFFF; /* White text color on hover */
+    font-size: 24px; /* Increased font size on hover */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Dropdown Style for Language Dropdown (EN) */
+nav ul li.language-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 100px; /* Dropdown width for language menu */
+    box-shadow: none; /* No shadow */
+    z-index: 1;
+    left: 0; /* Align to the left of the dropdown item */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+}
+
+nav ul li.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav ul li.language-dropdown .dropdown-content a {
+    padding: 12px 16px;
+    color: white; /* White text color */
+    font-size: 18px; /* Font size */
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s, font-size 0.3s;
+    text-align: left; /* Text alignment to the left */
+    background-color: transparent; /* No background color */
+    border: none; /* No border */
+}
+
+nav ul li.language-dropdown .dropdown-content a:hover {
+    color: #BD8E57; /* Brown text color on hover */
+    font-size: 24px; /* Increased font size on hover */
+    text-align: left; /* Align text to the left */
+    background-color: transparent; /* No background color on hover */
+    border: none; /* No border on hover */
+}
+
+nav ul li.booking-button {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center;
+    position: relative; /* For hover effect */
+}
+
+nav ul li.booking-button a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px; /* Initial width */
+    height: 26px; /* Initial height */
+    border: 2px solid #fff; /* White border */
+    border-radius: 5px; /* Rounded corners */
+    color: #fff; /* White text color */
+    text-align: center;
+    line-height: 26px; /* Center text vertically */
+    background-color: transparent; /* Transparent background */
+    transition: width 0.3s, height 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li.booking-button a:hover {
+    width: 106px; /* Expanded width */
+    height: 34px; /* Expanded height */
+    background-color: #FFFFFF; /* White background */
+    color: #BD8E57; /* Brown text color */
+    border-color: #BD8E57; /* Brown border color */
+}
+.calendar-container {
+    display: flex;
+    justify-content: flex-start; /* จัดตำแหน่งไปทางซ้าย */
+    padding: 40px;
+    align-items: flex-start;
+    margin-left: 190px; /* เพิ่มระยะห่างด้านซ้ายเพื่อขยับไปทางขวา */
+}
+
+
+.calendar-wrapper {
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #BD8E57;
+    color: #fff;
+}
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.calendar-header button:hover {
+    transform: scale(1.2);
+}
+
+#calendar-title {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#prev-month, #next-month {
+    background-color: #282626;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 40px;
+    height: 40px;
+}
+
+.calendar {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    background-color: transparent;
+}
+
+/* กรอบและพื้นหลังสำหรับชื่อวันในตารางปฏิทิน */
+.calendar th {
+    background-color: #ffffff; /* พื้นหลังสีขาว */
+    color: #BD8E57; /* สีตัวอักษรสีดำ */
+    padding: 10px; /* เพิ่มพื้นที่ในเซลล์ */
+    border: 1px solid #ddd; /* ขอบบางๆ */
+    text-align: center; /* จัดกลางข้อความ */
+}
+
+.calendar td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    background-color: #fff; /* พื้นหลังของแต่ละช่องเป็นสีขาว */
+    color: #000; /* สีเริ่มต้นของวันที่ */
+    width: 40px;
+    height: 40px;
+}
+
+.calendar .available {
+    color: #BD8E57; /* ตัวเลขวันที่สำหรับวันว่างทั้งวัน */
+}
+
+.calendar .unavailable {
+    color: #FF0000; /* ตัวเลขวันที่สำหรับวันไม่ว่างทั้งวัน */
+}
+
+.calendar .half-day {
+    color: #FF9500; /* ตัวเลขวันที่สำหรับวันว่างครึ่งวัน */
+}
+
+/* เปลี่ยนพื้นหลังและสีตัวอักษรเมื่อเอาเมาส์ไปวางบนวันที่ว่างทั้งวัน */
+.calendar td:hover.available {
+    background-color: #BD8E57; /* สีพื้นหลังของวันว่างทั้งวัน */
+    color: #FFFFFF !important; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
+}
+
+/* เปลี่ยนพื้นหลังและสีตัวอักษรเมื่อเอาเมาส์ไปวางบนวันที่ไม่ว่างทั้งวัน */
+.calendar td:hover.unavailable {
+    background-color: #FF0000; /* เปลี่ยนพื้นหลังเป็นสีแดง */
+    color: #FFFFFF !important; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
+}
+
+/* เปลี่ยนพื้นหลังและสีตัวอักษรเมื่อเอาเมาส์ไปวางบนวันที่ว่างครึ่งวัน */
+.calendar td:hover.half-day {
+    background-color: #FF9500; /* เปลี่ยนพื้นหลังเป็นสีส้ม */
+    color: #FFFFFF !important; /* เปลี่ยนสีตัวอักษรเป็นสีขาว */
+}
+
+
+
+.info-container {
+    max-width: 350px;
+    margin-left: 50px; /* เพิ่มระยะห่างด้านซ้าย */
+    text-align: left; /* จัดข้อความไปทางซ้าย */
+    padding-left: 56px; /* เพิ่มการเว้นพื้นที่ด้านซ้ายถ้าต้องการ */
+}
+
+/* CSS สำหรับการเปลี่ยนสีของข้อความ */
+.info-container .highlight {
+    font-weight: bold;
+    color: #FFE03E; /* เปลี่ยนสีข้อความเป็น FFE03E */
+}
+.info-container h2,
+.info-container ul li span.highlight {
+    color: #BD8E57; /* เปลี่ยนสีของข้อความเป็น #BD8E57 */
+}
+
+
+
+.info-container h2 {
+    margin-top: 0;
+}
+
+.info-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info-container ul li {
+    margin-bottom: 10px;
+}
+
+.info-container .highlight {
+    font-weight: bold;
+}
+
+/* เพิ่ม CSS สำหรับกล่องข้อความแจ้งเตือน */
+.alert {
+    display: none; /* ซ่อนกล่องข้อความโดยเริ่มต้น */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px; /* เพิ่ม padding ให้กล่องใหญ่ขึ้น */
+    background-color: #FFFFFF;
+    color: #FF0000;
+    border: 2px solid #FF0000;
+    border-radius: 10px;
+    z-index: 1000;
+    font-size: 24px; /* เพิ่มขนาดตัวอักษร */
+    text-align: center;
+    width: 400px; /* เพิ่มความกว้างของกล่องข้อความ */
+}
+
+.alert .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #FF0000;
+}
+
+.alert .close-btn:hover {
+    color: #AA0000;
+}
+
+/* เพิ่ม CSS สำหรับการคลิกนอกกล่องข้อความเพื่อปิด */
+.overlay {
+    display: none; /* ซ่อน overlay โดยเริ่มต้น */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* สีพื้นหลังของ overlay */
+    z-index: 999; /* Overlay ต้องอยู่ต่ำกว่ากล่องข้อความ */
+}
+/* CSS สำหรับกล่องป๊อปอัพเลือกเวลา */
+.time-selection-box {
+    display: none; /* ซ่อนกล่องป๊อปอัพเริ่มต้น */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background-color: #FFFFFF;
+    color: #000;
+    border: 2px solid #BD8E57;
+    border-radius: 10px;
+    z-index: 1000;
+    font-size: 16px;
+    text-align: center;
+    width: 300px;
+}
+
+.time-selection-box .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #BD8E57;
+}
+
+.time-selection-box .close-btn:hover {
+    color: #AA8E57;
+}
+
+.time-selection-content {
+    margin-top: 40px;
+}
+
+.time-slot {
+    margin-bottom: 20px;
+}
+
+.time-slot button {
+    background-color: #BD8E57;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.time-slot button:hover {
+    background-color: #A17B45;
+}
+
+.line-info i {
+    font-size: 48px; /* ขนาดไอคอน 48px */
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างไอคอนและข้อความ */
+    color: #39CD00; /* สีเขียวสำหรับไอคอน */
+}
+
+.phone-info i {
+    font-size: 36px; /* ขนาดไอคอน 48px */
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างไอคอนและข้อความ */
+    color: #4CAF50; /* สีเขียวสำหรับไอคอน */
+}
+
+.line-info {
+    font-size: 24px; /* ขนาดข้อความหลังไอคอน */
+    color: #FFFFFF; /* สีข้อความเป็นสีขาว */
+    display: flex; /* ใช้ flexbox เพื่อจัดแนวข้อความและไอคอน */
+    align-items: center; /* จัดแนวแนวตั้งให้อยู่กลาง */
+}
+
+.phone-info {
+    font-size: 24px; /* ขนาดข้อความหลังไอคอน */
+    color: #FFFFFF; /* สีข้อความเป็นสีขาว */
+    display: flex; /* ใช้ flexbox เพื่อจัดแนวข้อความและไอคอน */
+    align-items: center; /* จัดแนวแนวตั้งให้อยู่กลาง */
+}
+
+
